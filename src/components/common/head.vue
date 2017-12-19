@@ -1,5 +1,5 @@
 <template>
-	<div id="head">
+	<div id="header">
 		<h2>
 			{{ msg }}		
 		</h2>
@@ -7,7 +7,7 @@
 </template>
 <script>
 	export default{
-		name: 'Head',
+		name: 'headerTop',
 		data(){
 			return{
 				msg: 'KNOW'
@@ -16,7 +16,7 @@
 	}
 </script>
 <style>
-	#head{
+	#header{
 		width: 100%;
 		height: 40px;
 		position: fixed;

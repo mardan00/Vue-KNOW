@@ -2,8 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import HelloWorld from '@/components/HelloWorld'
-import Map from '@/components/page/Map'
+// import Map from '@/components/page/Map'
 import App from '@/App'
+import Hot from '@/components/page/hot'
+import Find from '@/components/page/find'
+import Dynamic from '@/components/page/dynamic'
+import Menu from '@/components/common/menu'
 
 Vue.use(Router)
 
@@ -15,11 +19,24 @@ export default new Router({
     //   component: App
     // },
 	// {
-		{
-    	path: '/index',
-    	name: 'Map',
-    	component: Map
-	}
+    {
+        path:'/index',
+        component: Menu,
+        children:[
+            {path: '/index/dynamic',component:Dynamic},
+            {path: '/index/hot' , component: Hot},
+            {path: '/index/find', component: Find}
+        ]
+    }
+	// {
+ //    	path: '/hot',
+ //    	name: 'Hot',
+ //    	component: Hot
+	// },
+ //    {
+ //        path:'/',
+ //        component: Dynamic
+ //    }
   ]
 })
 

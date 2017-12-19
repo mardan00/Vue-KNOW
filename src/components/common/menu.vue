@@ -1,17 +1,23 @@
 <template>
-	<div id="menu">
+	<div id="menuList">
 		<ul>
 			<div id="underline"></div>
-			<li class="chose">
+			<li class="chose" @click="goDynamic">
 			{{ dynamic }}</li>
-			<li>{{ hot }}</li>
-			<li>{{ find }}</li>
+			<li @click="goHot">{{ hot }}</li>
+			<li @click="goFind">{{ find }}</li>
+			<!-- <router-link to="hot">跳转</router-link> -->
 		</ul>
+		<div style="margin-top:88px;">
+			<transition mode="" name="">
+				<router-view></router-view>	
+			</transition>			
+		</div>
 	</div>
 </template>
 <script>
 	export default{
-		name:"menu",
+		name:"menuList",
 		data(){
 			return{
 				dynamic: '动态',
@@ -37,7 +43,7 @@
 			// // },
 			underline(){
 				// alert('work')
-				let m = document.getElementById('menu');
+				let m = document.getElementById('menuList');
 				let list = m.getElementsByTagName('li')
 				let line = document.getElementById('underline');
 				// line.className = 'change'
@@ -55,10 +61,12 @@
 								list[2].className = 'unchose';
 								break;
 							case 1:
+								// alert('work')
 								line.className = 'change_2';
 								this.className = 'chose' 
 								list[0].className = 'unchose';
 								list[2].className = 'unchose';
+								// this.$router.go('/hot')
 								// alert(i)
 								break;
 							case 2:
@@ -70,20 +78,34 @@
 						}
 					}
 				}
+			},
+			goHot(){
+				this.$router.push('/index/hot')
+			},
+			goDynamic(){
+				this.$router.push('/index/dynamic')
+			},
+			goFind(){
+				this.$router.push('/index/find')
 			}
 		}
 	}
 </script>
-<style>
-	#menu{
+<style scoped>
+	#menuList{
 		width: 100%;
-		position: fixed;
-		top:40px;
-		left: 0px;
+		/*position: fixed;*/
+		/*top:40px;*/
+		/*left: 0px;*/
 		background-color: #fff;
 	}
 	ul{
+		background-color: #fff;
 		overflow: hidden;
+		position: fixed;
+		top: 40px;
+		width: 100%;
+		left: 0;
 		box-shadow: 0px 2px 2px #ccc;
 	}
 	li{
