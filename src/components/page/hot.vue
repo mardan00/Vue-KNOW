@@ -1,17 +1,15 @@
 <template>
 	<div id="hot" style="">
-		<panel></panel>
-		<panel></panel>
-		<panel></panel>
-		<div>测试</div>
-		<panel></panel>
-		<panel></panel>
-		<panel></panel>
-		<div>测试</div>
+		<hot-Panel></hot-Panel>
+		<hot-Panel></hot-Panel>
+		<hot-Panel></hot-Panel>
+		<hot-Panel></hot-Panel>
+		<hot-Panel></hot-Panel>
 	</div>
 </template>
 <script>
 	import panel from '../common/panel'
+	import hotPanel from '../common/hotPanel'
 	export default {
 		data(){
 			return{
@@ -19,7 +17,8 @@
 			}
 		},
 		components: {
-			panel
+			panel,
+			hotPanel
 		}
 	}
 </script>
