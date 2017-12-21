@@ -8,6 +8,7 @@ import Hot from '@/components/page/hot'
 import Find from '@/components/page/find'
 import Dynamic from '@/components/page/dynamic'
 import Menu from '@/components/common/menu'
+import More from '@/components/page/more'
 
 Vue.use(Router)
 
@@ -27,6 +28,10 @@ export default new Router({
             {path: '/index/hot' , component: Hot},
             {path: '/index/find', component: Find}
         ]
+    },
+    {
+        path:'/more',
+        component: More
     }
 	// {
  //    	path: '/hot',

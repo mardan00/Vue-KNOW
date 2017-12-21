@@ -31,7 +31,7 @@
 				<i class="iconfont icon-tongzhi"></i>
 				<span>通知</span>
 			</li>
-			<li>
+			<li @click="goMore">
 				<i class="iconfont icon-gengduo"></i>
 				<span>更多</span>
 			</li>
@@ -105,6 +105,9 @@
 						// }
 					}
 				}
+			},
+			goMore(){
+				this.$router.push('/more')
 			}
 		}
 	}

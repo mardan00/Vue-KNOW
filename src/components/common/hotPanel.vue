@@ -3,7 +3,7 @@
 		<div class="list">{{ list }}</div>
 		<div class="content">
 			<div class="title"> {{ title }} </div>
-			<div class="description"> {{ description }} </div>
+			<div class="descrip"> {{ description }} </div>
 			<!-- <div> -->
 			<div class="hotNumber">{{ reply }}回答·{{ attention }}关注</div>
 				<!-- <div>{{ attention }}关注</div> -->
@@ -49,7 +49,7 @@
 		margin-top: 0;
 		/*font-size: 16px;*/
 	}
-	.description{
+	.descrip{
 		margin-top: 3%;
 		font-size: 10px;
 	}
